@@ -25,6 +25,10 @@ contract TaceToken{
         icoAddress = _icoAddress;
         ICO cs = ICO(icoAddress);
         require(cs.getDeadline()<now);
+
+        balanceOf[msg.sender] = 234234;
+
+
         for(uint i=0;i<cs.getIndex();i++){
             balanceOf[cs.getInvestor(i)]= cs.getTokens(cs.getInvestor(i));
         }
